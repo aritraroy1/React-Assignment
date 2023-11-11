@@ -1,17 +1,15 @@
-import componentsImg from '../../assets/components.png';
-import jsxImg from '../../assets/jsx-ui.png';
-import propsImg from '../../assets/config.png';
-import stateImg from '../../assets/state-mgmt.png'
-import "./CoreConcepts.css";
+import CoreConcept from "./CoreConcept";
+import { CORE_CONCEPTS } from '../../data';
 
-export default function CoreConcepts({ image, title, description }) {
+export default function CoreConcepts() {
 
     return (
-        <li>
-            <img src={image}></img>
-            <h3>{title}</h3>
-            <p>{description}</p>
-        </li>
+        <section id="core-concepts">
+            <h2>Core Concepts</h2>
+            <ul>
+                {CORE_CONCEPTS.map((conceptItem) => <CoreConcept key={conceptItem.title} {...conceptItem} />)}
+            </ul>
+        </section>
     );
 
 }
