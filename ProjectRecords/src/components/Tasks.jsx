@@ -45,6 +45,11 @@ export default function Tasks({ onHandleAddTask, onDeleteTask, taskList }) {
                     </ul>
                 </div>
             )}
+            {(taskList.length === 0) && (
+                < div className="flex flex-col items-center justify-between bg-stone-100">
+                    <p>Project does not have task yet</p>
+                </div>
+            )}
         </main >
     );
 
